@@ -1,6 +1,6 @@
 export const getPost = async (id: string) => {
     console.log(`Get data single page started ${id} ${new Date()}`);
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
     const post = await fetch(`https://dummyjson.com/posts/${id}`);
     console.log(`Get data single page finished ${id} ${new Date()}`);
     return post.json();

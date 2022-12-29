@@ -25,6 +25,9 @@ const SlugPage = ({ params }: any) => {
                 <div> {id}</div>
                 <h1>{post.title}</h1>
                 <p>{post.body}</p>
+                <p>
+                    Revalidate time: <>{new Date() + ""}</>
+                </p>
             </main>
         </>
     );
@@ -35,6 +38,6 @@ export async function generateStaticParams({ params: { slug } }: any) {
 }
 
 export const dynamic = "force-static",
-    revalidate = 60;
+    revalidate = 10;
 
 export default SlugPage;
