@@ -8,14 +8,20 @@ const PostLayout = ({ children }: { children: React.ReactNode }) => {
                 <div>Post Nav</div>
                 <ul>
                     <li>
-                        <Link href={"/posts"}>Post index</Link>
+                        <Link prefetch={false} href={"/posts"}>
+                            Post index
+                        </Link>
                     </li>
                     <li>
-                        <Link href={"/posts/test"}>Post / Test</Link>
+                        <Link prefetch={false} href={"/posts/test"}>
+                            Post / Test
+                        </Link>
                     </li>
 
                     <li>
-                        <Link href={"/posts/any-slug"}>Post / Any slug</Link>
+                        <Link prefetch={false} href={"/posts/any-slug"}>
+                            Post / Any slug
+                        </Link>
                     </li>
                 </ul>
             </nav>

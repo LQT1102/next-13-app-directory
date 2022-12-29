@@ -13,10 +13,14 @@ export default function RootLayout({
                     <div>Root Nav</div>
                     <ul>
                         <li>
-                            <Link href={"/"}>Home</Link>
+                            <Link href={"/"} prefetch={false}>
+                                Home
+                            </Link>
                         </li>
                         <li>
-                            <Link href={"/posts"}>Post index</Link>
+                            <Link href={"/posts"} prefetch={false}>
+                                Post index
+                            </Link>
                         </li>
                     </ul>
                 </nav>

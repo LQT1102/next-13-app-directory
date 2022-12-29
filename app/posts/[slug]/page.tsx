@@ -1,6 +1,5 @@
-import { NextPage } from "next";
 import Head from "next/head";
-import React, { use } from "react";
+import { use } from "react";
 import { getPost } from "../../../api/posts/postApi";
 
 type Props = {};
@@ -8,6 +7,8 @@ type Props = {};
 const SlugPage = ({ params }: any) => {
     const id = params?.slug;
     const post = use(getPost(id));
+
+    console.log("Revalidate");
     return (
         <>
             <Head>
@@ -28,5 +29,12 @@ const SlugPage = ({ params }: any) => {
         </>
     );
 };
+
+export async function generateStaticParams({ params: { slug } }: any) {
+    return [];
+}
+
+export const dynamic = "force-static",
+    revalidate = 60;
 
 export default SlugPage;
